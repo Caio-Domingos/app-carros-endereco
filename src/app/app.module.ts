@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HomeModule } from './pages/home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,9 +22,7 @@ import { HomeModule } from './pages/home/home.module';
     MaterialBundleModule,
     LoginModule,
     HomeModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

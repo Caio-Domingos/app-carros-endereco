@@ -1,0 +1,89 @@
+<div class="container">
+  <form #addressForm="ngForm">
+    <h3 class="title">Atualizar endereço</h3>
+    <mat-form-field>
+      <input matInput required [(ngModel)]="rua" name="rua" placeholder="Rua" />
+      <mat-error *ngIf="addressForm.controls.rua?.invalid">{{
+        getErrorMessage('rua')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="complemento"
+        name="complemento"
+        placeholder="Complemento"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [(ngModel)]="numero"
+        name="numero"
+        placeholder="Numero"
+      />
+      <mat-error *ngIf="addressForm.controls.numero?.invalid">{{
+        getErrorMessage('numero')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [(ngModel)]="bairro"
+        name="bairro"
+        placeholder="Bairro"
+      />
+      <mat-error *ngIf="addressForm.controls.bairro?.invalid">{{
+        getErrorMessage('bairro')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [(ngModel)]="cidade"
+        name="cidade"
+        placeholder="Cidade"
+      />
+      <mat-error *ngIf="addressForm.controls.cidade?.invalid">{{
+        getErrorMessage('cidade')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [(ngModel)]="estado"
+        name="estado"
+        placeholder="Estado"
+      />
+      <mat-error *ngIf="addressForm.controls.estado?.invalid">{{
+        getErrorMessage('estado')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required [(ngModel)]="cep" name="cep" placeholder="Cep" />
+      <mat-error *ngIf="addressForm.controls.cep?.invalid">{{
+        getErrorMessage('cep')
+      }}</mat-error>
+    </mat-form-field>
+    <div class="btns" [class.loading]="sending">
+      <ng-container *ngIf="!sending; else loading">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="addressForm.invalid"
+          (click)="save()"
+        >
+          Atualizar
+        </button>
+        <button mat-raised-button (click)="addressForm.reset()">Limpar</button>
+      </ng-container>
+      <ng-template #loading>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </ng-template>
+    </div>
+  </form>
+</div>

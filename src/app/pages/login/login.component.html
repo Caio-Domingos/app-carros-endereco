@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="modal mat-elevation-z4">
+    <form #loginForm="ngForm">
+      <img src="./../../../assets/imgs/logo.jpeg" alt="Logo" />
+      <mat-form-field>
+        <input
+          matInput
+          required
+          [(ngModel)]="cpf"
+          name="cpf"
+          placeholder="CPF"
+        />
+        <mat-error *ngIf="loginForm.controls.cpf?.invalid">{{
+          getErrorMessage('cpf')
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          required
+          minlength="7"
+          [(ngModel)]="placa"
+          name="placa"
+          placeholder="Placa"
+        />
+        <mat-error *ngIf="loginForm.controls.placa?.invalid">{{
+          getErrorMessage('placa')
+        }}</mat-error>
+      </mat-form-field>
+      <div class="btns" [class.loading]="sending">
+        <ng-container *ngIf="!sending; else loading">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="loginForm.invalid"
+            (click)="login()"
+          >
+            Logar
+          </button>
+          <button mat-raised-button (click)="loginForm.reset()">Limpar</button>
+        </ng-container>
+        <ng-template #loading>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+      </div>
+    </form>
+  </div>
+</div>

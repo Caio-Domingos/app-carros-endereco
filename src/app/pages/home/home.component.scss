@@ -1,0 +1,71 @@
+.container {
+  min-height: 100vh;
+  mat-toolbar {
+    .example-icon {
+      padding: 0 14px;
+    }
+
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  }
+
+  div.main {
+    min-height: 90vh;
+    padding: 10px;
+
+    mat-card {
+      position: relative;
+      max-width: 600px;
+      min-width: 350px;
+      margin: 0 auto;
+      margin-top: 100px;
+      width: 80%;
+      div.card-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+
+        mat-icon {
+          font-size: 60px;
+          width: 60px;
+          height: auto;
+        }
+
+        h2 {
+          text-align: center;
+          padding-bottom: 20px;
+          margin: 0;
+          margin-bottom: 50px;
+          border-bottom: 1px solid grey;
+        }
+
+        div.data {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .bold-style {
+            font-weight: bold;
+          }
+
+          p {
+            margin: 5px;
+            width: 45%;
+            flex: 1 1 auto;
+            text-align: left;
+          }
+        }
+      }
+
+      .fab-modify {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+      }
+    }
+  }
+}

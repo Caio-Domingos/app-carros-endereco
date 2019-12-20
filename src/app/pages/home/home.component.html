@@ -1,0 +1,55 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <span>Proauto</span>
+    <span class="example-spacer"></span>
+    <button
+      (click)="logout()"
+      mat-icon-button
+      aria-label="Example icon-button with a heart icon"
+    >
+      <mat-icon aria-hidden="false" aria-label="Example user verified icon"
+        >exit_to_app</mat-icon
+      >
+    </button>
+  </mat-toolbar>
+
+  <div class="main">
+    <mat-card>
+      <div class="card-main">
+        <mat-icon>assignment</mat-icon>
+        <h2 class="title">Informações</h2>
+        <div class="data">
+          <p>
+            <span class="bold-style">Nome</span>: {{ associadoPerson?.nome }}
+          </p>
+          <p><span class="bold-style">CPF</span>: {{ associadoPerson?.cpf }}</p>
+          <p>
+            <span class="bold-style">Placa</span>: {{ associadoPerson?.placa }}
+          </p>
+          <p>
+            <span class="bold-style">Telefone</span>:
+            {{ associadoPerson?.telefone }}
+          </p>
+          <p>
+            <span class="bold-style">Endereço</span>: Rua
+            {{ associadoPerson?.endereco.rua }} nº
+            {{ associadoPerson?.endereco.numero }} Bairro
+            {{ associadoPerson?.endereco.bairro }}, Complemento
+            {{ associadoPerson?.endereco.complemento }},
+            {{ associadoPerson?.endereco.cidade }},
+            {{ associadoPerson?.endereco.estado }}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="openModify()"
+        mat-fab
+        aria-label="Modificar endereço"
+        color="primary"
+        class="fab-modify"
+      >
+        <mat-icon>create</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+</div>
